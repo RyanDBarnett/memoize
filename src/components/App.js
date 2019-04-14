@@ -9,7 +9,6 @@ class App extends Component {
         <header className="App-header">
           <h1>ARIA Flashcards</h1>
           <h2>Learn how to make the web more accessible!</h2>
-          <Card />
         </header>
       </div>
     );
