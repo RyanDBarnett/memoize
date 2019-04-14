@@ -10,6 +10,7 @@ class App extends Component {
           <h1>ARIA Flashcards</h1>
           <h2>Learn how to make the web more accessible!</h2>
         </header>
+        <Card />
       </div>
     );
   }
