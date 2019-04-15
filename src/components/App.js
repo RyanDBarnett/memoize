@@ -7,31 +7,52 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      originalQuestions: questions,
-      currentQuestion: {},
+      currentQuestions: Object.assign([], questions),
+      currentQuestion: null,
       correctQuestions: [],
       incorrectQuestions: []
     }
   }
 
   componentDidMount = () => {
-    showNextQuestion();
+    this.showNextQuestion();
   }
 
   showNextQuestion = () => {
     this.setState({
-      currentQuestion: originalQuestions.shift()
+      currentQuestion: this.state.currentQuestions.shift()
+    })
+  }
+
+  resetAllQuestions = () => {
+    this.setState({
+      currentQuestions: Object.assign([], questions).splice(1),
+      currentQuestion: Object.assign({}, questions[0])
+    })
+  }
+
+  resetIncorrectQuestions = () => {
+    this.setState({
+      currentQuestions: this.state.incorrectQuestions,
+      incorrectQuestions: []
     })
   }
 
   render() {
+    let card = this.state.currentQuestion &&
+      <Card
+        currentQuestion={this.state.currentQuestion}
+        showNextQuestion={this.showNextQuestion}
+        resetAllQuestions={this.resetAllQuestions}
+        resetIncorrectQuestions={this.resetIncorrectQuestions}
+      />;
     return (
       <div className="App">
         <header className="App-header">
           <h1>ARIA Flashcards</h1>
           <h2>Learn how to make the web more accessible!</h2>
         </header>
-        <Card currentQuestion={this.state.currentQuestion} showNextQuestion={this.showNextQuestion} />
+        {card}
       </div>
     );
   }
