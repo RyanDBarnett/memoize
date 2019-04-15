@@ -1,9 +1,17 @@
 import React, { Component } from 'react';
 import '../styles/App.css';
 import Card from './Card';
+import questions from '../data/questions.js';
 
 class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      originalQuestions: questions
+    }
+  }
   render() {
+    console.log(this.state.originalQuestions)
     return (
       <div className="App">
         <header className="App-header">
