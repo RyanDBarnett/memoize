@@ -7,18 +7,31 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      originalQuestions: questions
+      originalQuestions: questions,
+      currentQuestion: {},
+      correctQuestions: [],
+      incorrectQuestions: []
     }
   }
+
+  componentDidMount = () => {
+    showNextQuestion();
+  }
+
+  showNextQuestion = () => {
+    this.setState({
+      currentQuestion: originalQuestions.shift()
+    })
+  }
+
   render() {
-    console.log(this.state.originalQuestions)
     return (
       <div className="App">
         <header className="App-header">
           <h1>ARIA Flashcards</h1>
           <h2>Learn how to make the web more accessible!</h2>
         </header>
-        <Card />
+        <Card currentQuestion={this.state.currentQuestion} showNextQuestion={this.showNextQuestion} />
       </div>
     );
   }
