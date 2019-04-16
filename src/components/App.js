@@ -7,21 +7,29 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      currentQuestions: Object.assign([], questions),
-      currentQuestion: null,
+      currentQuestions: Object.assign([], questions).splice(1),
+      currentQuestion: Object.assign({}, questions[0]),
       correctQuestions: [],
       incorrectQuestions: []
     }
   }
 
-  componentDidMount = () => {
-    this.showNextQuestion();
+  checkAnswer = (answer) => {
+    if(this.state.currentQuestion.answer === answer) {
+      this.setState({
+        correctQuestions: this.state.correctQuestions.concat([this.state.currentQuestion])
+      })
+    } else {
+      this.setState({
+        incorrectQuestions: this.state.incorrectQuestions.concat([this.state.currentQuestion])
+      })
+    }
   }
-
+  
   showNextQuestion = () => {
     this.setState({
       currentQuestion: this.state.currentQuestions.shift()
-    })
+    }) 
   }
 
   resetAllQuestions = () => {
@@ -33,18 +41,20 @@ class App extends Component {
 
   resetIncorrectQuestions = () => {
     this.setState({
-      currentQuestions: this.state.incorrectQuestions,
+      currentQuestions: this.state.incorrectQuestions.splice(1),
+      currentQuestion: Object.assign({}, this.state.incorrectQuestions[0]),
       incorrectQuestions: []
     })
   }
 
   render() {
-    let card = this.state.currentQuestion &&
+    let card = this.state.currentQuestions &&
       <Card
         currentQuestion={this.state.currentQuestion}
         showNextQuestion={this.showNextQuestion}
         resetAllQuestions={this.resetAllQuestions}
         resetIncorrectQuestions={this.resetIncorrectQuestions}
+        checkAnswer={this.checkAnswer}
       />;
     return (
       <div className="App">
