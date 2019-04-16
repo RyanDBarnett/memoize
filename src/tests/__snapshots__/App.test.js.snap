@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App should match the snapshot with all data passed in 1`] = `
+<div
+  className="App"
+>
+  <img
+    className="mandala"
+    src="blue-mandala.png"
+  />
+  <header
+    className="App-header"
+  >
+    <h1>
+      ARIA Flashcards
+    </h1>
+  </header>
+</div>
+`;
