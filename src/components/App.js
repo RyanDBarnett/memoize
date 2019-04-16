@@ -46,7 +46,7 @@ class App extends Component {
   }
 
   resetAllQuestions = () => {
-    let allQuestions = this.state.correctQuestions.concat(this.state.incorrectQuestions)
+    const allQuestions = this.state.correctQuestions.concat(this.state.incorrectQuestions)
     this.setState({
       currentQuestions: allQuestions.splice(1),
       currentQuestion: allQuestions[0],
@@ -58,7 +58,7 @@ class App extends Component {
   resetIncorrectQuestions = () => {
     this.setState({
       currentQuestions: this.state.incorrectQuestions.splice(1),
-      currentQuestion: Object.assign({}, this.state.incorrectQuestions[0]),
+      currentQuestion: this.state.incorrectQuestions[0],
       incorrectQuestions: []
     })
   }
