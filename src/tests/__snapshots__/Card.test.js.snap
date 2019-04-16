@@ -1,0 +1,57 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Card should display ending card if there are no more cards 1`] = `
+<div
+  className="Card"
+>
+  <h4>
+    All Done! Do you want to go again?
+  </h4>
+  <div
+    className="btnContainer"
+  >
+    <button
+      className="resetAll"
+    >
+      Reset All Questions
+    </button>
+    <button
+      className="resetIncorrect"
+    >
+      Practice Incorrect Questions
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Card should match the snapshot with all data passed in 1`] = `
+<div
+  className="Card"
+>
+  <h4>
+    Which of the 3 ARIA main features defines what an element is or does?
+  </h4>
+  <div
+    className="btnContainer"
+  >
+    <button
+      key="0"
+      onClick={[Function]}
+    >
+      Properties
+    </button>
+    <button
+      key="1"
+      onClick={[Function]}
+    >
+      States
+    </button>
+    <button
+      key="2"
+      onClick={[Function]}
+    >
+      Roles
+    </button>
+  </div>
+</div>
+`;
