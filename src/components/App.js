@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import '../styles/App.css';
 import Card from './Card';
+import mandala from '../media/blue-mandala.png';
 
 class App extends Component {
   constructor() {
@@ -15,14 +16,14 @@ class App extends Component {
 
   componentDidMount = () => {
     fetch('https://fe-apps.herokuapp.com/api/v1/memoize/1901/ryandbarnett/cards')
-      .then(response => response.json())
-      .then(data => {
-        this.setState({
-          currentQuestions: Object.assign([], data.cards).splice(1),
-          currentQuestion: Object.assign({}, data.cards[0])
-        })
+    .then(response => response.json())
+    .then(data => {
+      this.setState({
+        currentQuestions: Object.assign([], data.cards).splice(1),
+        currentQuestion: Object.assign({}, data.cards[0])
       })
-      .catch(error => {throw new Error(error)})
+    })
+    .catch(error => {throw new Error(error)})
   }
 
   checkAnswer = (answer) => {
@@ -40,7 +41,8 @@ class App extends Component {
   showNextQuestion = () => {
     this.setState({
       currentQuestion: this.state.currentQuestions.shift()
-    }) 
+    });
+    this.setStateLocalStorage();
   }
 
   resetAllQuestions = () => {
@@ -61,6 +63,14 @@ class App extends Component {
     })
   }
 
+  setStateLocalStorage = () => {
+    localStorage.setItem('appState', JSON.stringify(this.state));
+  }
+
+  getStateLocalStorage = () => {
+    return JSON.parse(localStorage.getItem('appState'));
+  }
+
   render() {
     let card = this.state.currentQuestions !== null &&
       <Card
@@ -72,9 +82,9 @@ class App extends Component {
       />;
     return (
       <div className="App">
+        <img className="mandala" src={mandala} />
         <header className="App-header">
           <h1>ARIA Flashcards</h1>
-          <h2>Learn how to make the web more accessible!</h2>
         </header>
         {card}
       </div>
