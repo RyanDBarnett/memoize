@@ -1,17 +1,29 @@
 import React, { Component } from 'react';
 import '../styles/App.css';
 import Card from './Card';
-import questions from '../data/questions.js';
+// import questions from '../data/questions.js';
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
-      currentQuestions: Object.assign([], questions).splice(1),
-      currentQuestion: Object.assign({}, questions[0]),
+      currentQuestions: null,
+      currentQuestion: {},
       correctQuestions: [],
       incorrectQuestions: []
     }
+  }
+
+  componentDidMount = () => {
+    fetch('https://fe-apps.herokuapp.com/api/v1/memoize/1901/ryandbarnett/cards')
+      .then(response => response.json())
+      .then(data => {
+        this.setState({
+          currentQuestions: Object.assign([], data.cards).splice(1),
+          currentQuestion: Object.assign({}, data.cards[0])
+        })
+      })
+      .catch(error => {throw new Error(error)})
   }
 
   checkAnswer = (answer) => {
@@ -33,9 +45,12 @@ class App extends Component {
   }
 
   resetAllQuestions = () => {
+    let allQuestions = this.state.correctQuestions.concat(this.state.incorrectQuestions)
     this.setState({
-      currentQuestions: Object.assign([], questions).splice(1),
-      currentQuestion: Object.assign({}, questions[0])
+      currentQuestions: allQuestions.splice(1),
+      currentQuestion: allQuestions[0],
+      correctQuestions: [],
+      incorrectQuestions: []
     })
   }
 
@@ -48,7 +63,7 @@ class App extends Component {
   }
 
   render() {
-    let card = this.state.currentQuestions &&
+    let card = this.state.currentQuestions !== null &&
       <Card
         currentQuestion={this.state.currentQuestion}
         showNextQuestion={this.showNextQuestion}
