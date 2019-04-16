@@ -1,0 +1,13 @@
+.Card {
+  width: 35%;
+  z-index: 0;
+  background-color: #e3f0f6;
+  padding: 2%;
+  border-radius: 20px;
+  border: #211a90 2px solid;
+  text-align: center;
+}
+
+.Card h4 {
+  min-height: 75px;
+}
