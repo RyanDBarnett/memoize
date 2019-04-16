@@ -18,65 +18,33 @@ describe('App', () => {
   });
 
   describe('checkAnswer', () => {
-    it('should put the currentQuestion into correctQuestions if answer matches', () => {
-      let wrapper2 = shallow(<App />);
-      wrapper2.setState({
-        currentQuestions: [],
-        currentQuestion: {
-          answer: "Roles",
-          choices: ["Properties","States","Roles"],
-          id: "1",
-          question: "Which of the 3 ARIA main features defines what an element is or does?"
-        },
-        correctQuestions: [],
-        incorrectQuestions: []
+    beforeEach( () => {
+      wrapper.setState({
+        currentQuestion: {answer: 'Roles'}
       });
-      wrapper2.instance().checkAnswer('Roles');
-      expect(wrapper2.state().correctQuestions.length).toEqual(1);
+    });
+
+    it('should put the currentQuestion into correctQuestions if answer matches', () => {
+      wrapper.instance().checkAnswer('Roles');
+      expect(wrapper.state().correctQuestions.length).toEqual(1);
     });
 
     it('should put the currentQuestion into incorrectQuestions if answer matches', () => {
-      let wrapper2 = shallow(<App />);
-      wrapper2.setState({
-        currentQuestions: [],
-        currentQuestion: {
-          answer: "Roles",
-          choices: ["Properties","States","Roles"],
-          id: "1",
-          question: "Which of the 3 ARIA main features defines what an element is or does?"
-        },
-        correctQuestions: [],
-        incorrectQuestions: []
-      });
-      wrapper2.instance().checkAnswer('States');
-      expect(wrapper2.state().incorrectQuestions.length).toEqual(1);
+      wrapper.instance().checkAnswer('States');
+      expect(wrapper.state().incorrectQuestions.length).toEqual(1);
     });
   });
 
   describe('showNextQuestion', () => {
     it('should set the first question in currentQuestions to the currentQuestion', () => {
-      let wrapper3 = shallow(<App />);
-      wrapper3.setState({
-        currentQuestions: [
-          {
-            answer: "Roles",
-            choices: ["Properties","States","Roles"],
-            id: "1",
-            question: "Which of the 3 ARIA main features defines what an element is or does?"
-          }
-        ],
-        currentQuestion: null,
+      wrapper.setState({
+        currentQuestions: [{question: 'Test Question 1'}]
       });
-      expect(wrapper3.state().currentQuestions.length).toEqual(1);
-      expect(wrapper3.state().currentQuestion).toEqual(null)
-      wrapper3.instance().showNextQuestion();
-      expect(wrapper3.state().currentQuestions.length).toEqual(0);
-      expect(wrapper3.state().currentQuestion).toEqual({
-        answer: "Roles",
-        choices: ["Properties","States","Roles"],
-        id: "1",
-        question: "Which of the 3 ARIA main features defines what an element is or does?"
-      });
+      expect(wrapper.state().currentQuestions.length).toEqual(1);
+      expect(wrapper.state().currentQuestion).toEqual({})
+      wrapper.instance().showNextQuestion();
+      expect(wrapper.state().currentQuestions.length).toEqual(0);
+      expect(wrapper.state().currentQuestion).toEqual({question: 'Test Question 1'});
     });
   });
 
