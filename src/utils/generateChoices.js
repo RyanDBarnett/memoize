@@ -6,10 +6,15 @@ function generateChoices(choices, showNextQuestion, checkAnswer) {
     checkAnswer(answer);
     showNextQuestion();
   }
-
-  return choices.map((choice, index) => {
-    return <button key={index} onClick={handleClick}>{choice}</button>
-  });
+  return (
+    <div className="btnContainer">
+      {
+        choices.map((choice, index) => {
+          return <button key={index} onClick={handleClick}>{choice}</button>
+        })
+      }
+    </div>
+  )
 }
 
 export default generateChoices;
