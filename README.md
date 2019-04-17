@@ -1,6 +1,8 @@
 ### Description
 
-This project was built to help users learn about ARIA (Accessible Rich Internet Applications) attributes and how to use them to make their applications more accessible. 
+This project was built to help users learn about ARIA (Accessible Rich Internet Applications) attributes and how to use them to make their applications more accessible.
+
+[Visit Live App](https://ryandbarnett.github.io/memoize/)
 
 ### Installation
 
