@@ -14,10 +14,10 @@ const Card = ({
   const buttons = currentQuestion ? generateChoices(choices, showNextQuestion, checkAnswer) : endRoundBtns(resetAllQuestions, resetIncorrectQuestions);
   const display = currentQuestion ? <h4>{currentQuestion.question}</h4> : <h4>All Done! Do you want to go again?</h4>
   return (
-    <div className="Card">
+    <section className="Card">
       {display}
       {buttons}
-    </div>
+    </section>
   )
 }
 

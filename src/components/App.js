@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import '../styles/_App.scss';
 import Header from './Header';
+import Scoreboard from './Scoreboard';
 import Card from './Card';
 import balloon from '../media/hot-air-balloon.png';
 
@@ -102,13 +103,20 @@ class App extends Component {
         resetIncorrectQuestions={this.resetIncorrectQuestions}
         checkAnswer={this.checkAnswer}
       />;
+    let scoreboard = this.state.currentQuestions !== null &&
+      <Scoreboard 
+        numCards={this.state.currentQuestions.length}
+        numCorrect={this.state.correctQuestions.length}
+        numIncorrect={this.state.incorrectQuestions.length}
+      />
 
     return (
-      <div className="App">
+      <main className="App">
         {balloons}
         <Header />
+        {scoreboard}
         {card}
-      </div>
+      </main>
     );
   }
 }

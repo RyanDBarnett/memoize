@@ -1,0 +1,12 @@
+@import 'variables';
+
+.Scoreboard {
+  z-index: 0;
+  display: flex;
+  justify-content: space-between;
+  background-color: $container-color;
+  border-radius: $border-radius;
+  border: $border;
+  padding: 2%;
+  width: 40%;
+}
