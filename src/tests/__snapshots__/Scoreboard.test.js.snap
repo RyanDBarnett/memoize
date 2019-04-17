@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Scoreboard should match snapshot 1`] = `
+<section
+  className="Scoreboard"
+>
+  <h2>
+    Cards Left: 
+    25
+  </h2>
+  <h2>
+    Correct: 
+    3
+  </h2>
+  <h2>
+    Incorrect: 
+    3
+  </h2>
+</section>
+`;

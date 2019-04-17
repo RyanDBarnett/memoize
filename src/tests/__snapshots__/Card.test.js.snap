@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Card should display ending buttons and heading if there are no more cards 1`] = `
-<div
+<section
   className="Card"
 >
   <h4>
@@ -21,11 +21,11 @@ exports[`Card should display ending buttons and heading if there are no more car
       Practice Incorrect Questions
     </button>
   </div>
-</div>
+</section>
 `;
 
 exports[`Card should match the snapshot with all data passed in 1`] = `
-<div
+<section
   className="Card"
 >
   <h4>
@@ -56,5 +56,5 @@ exports[`Card should match the snapshot with all data passed in 1`] = `
       Roles
     </button>
   </div>
-</div>
+</section>
 `;
