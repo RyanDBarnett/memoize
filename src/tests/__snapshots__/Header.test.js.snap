@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header should match snapshot 1`] = `
+<header
+  className="App-header"
+>
+  <h1>
+    ARIA Flashcards
+  </h1>
+</header>
+`;

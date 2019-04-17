@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Card should display ending card if there are no more cards 1`] = `
+exports[`Card should display ending buttons and heading if there are no more cards 1`] = `
 <div
   className="Card"
 >
