@@ -33,7 +33,7 @@ describe('Card', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  it("should display ending card if there are no more cards", () => {
+  it("should display ending buttons and heading if there are no more cards", () => {
     wrapper = shallow(
       <Card 
         currentQuestion={null}

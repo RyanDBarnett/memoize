@@ -80,20 +80,6 @@ describe('App', () => {
     });
   });
 
-  describe('getStateLocalStorage', () => {
-    it('should return a previously set app state from localStorage', () => {
-      let mockState = {
-        currentQuestions: [{question: 3}, {question: 4}],
-        currentQuestion: {question: 2},
-        correctQuestions: [{question: 4}],
-        incorrectQuestions: []
-      }
-      localStorage.setItem('appState', JSON.stringify(mockState));
-      let returnedAppState = wrapper.instance().getStateLocalStorage('appState');
-      expect(returnedAppState).toEqual(mockState);
-    });
-  });
-
   describe('resetIncorrectQuestions', () => {
     beforeEach( () => {
       wrapper.setState({
@@ -121,6 +107,20 @@ describe('App', () => {
     it('should set the incorrect questions array to an empty array', () => {
       wrapper.instance().resetIncorrectQuestions();
       expect(wrapper.state().incorrectQuestions).toEqual([]);
+    });
+  });
+
+  describe('getStateLocalStorage', () => {
+    it('should return a previously set app state from localStorage', () => {
+      let mockState = {
+        currentQuestions: [{question: 3}, {question: 4}],
+        currentQuestion: {question: 2},
+        correctQuestions: [{question: 4}],
+        incorrectQuestions: []
+      }
+      localStorage.setItem('appState', JSON.stringify(mockState));
+      let returnedAppState = wrapper.instance().getStateLocalStorage('appState');
+      expect(returnedAppState).toEqual(mockState);
     });
   });
 });
