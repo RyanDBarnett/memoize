@@ -16,15 +16,19 @@ class App extends Component {
   }
 
   componentDidMount = () => {
-    fetch('https://fe-apps.herokuapp.com/api/v1/memoize/1901/ryandbarnett/cards')
-    .then(response => response.json())
-    .then(data => {
-      this.setState({
-        currentQuestions: Object.assign([], data.cards).splice(1),
-        currentQuestion: Object.assign({}, data.cards[0])
+    if(localStorage.length) {
+      this.setState(this.getStateLocalStorage());
+    } else {
+      fetch('https://fe-apps.herokuapp.com/api/v1/memoize/1901/ryandbarnett/cards')
+      .then(response => response.json())
+      .then(data => {
+        this.setState({
+          currentQuestions: Object.assign([], data.cards).splice(1),
+          currentQuestion: Object.assign({}, data.cards[0])
+        })
       })
-    })
-    .catch(error => {throw new Error(error)})
+      .catch(error => {throw new Error(error)})
+    }
   }
 
   checkAnswer = (answer) => {
