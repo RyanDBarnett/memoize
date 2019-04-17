@@ -83,7 +83,7 @@ class App extends Component {
   addBalloons = () => {
     return (
       this.state.correctQuestions.map((correctQues, index) => {
-        return <img className="hot-air-balloon" key={index} src={balloon} style={{top: this.getRandomWindowHeight()}} alt="Orange and red striped hot air balloon"/>
+        return <img className="hot-air-balloon" aria-hidden="true" key={index} src={balloon} style={{top: this.getRandomWindowHeight()}} alt="Orange and red striped hot air balloon"/>
       })
     )
   }

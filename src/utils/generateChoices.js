@@ -10,7 +10,7 @@ function generateChoices(choices, showNextQuestion, checkAnswer) {
     <div className="btnContainer">
       {
         choices.map((choice, index) => {
-          return <button className={'choice-btn-' + (index + 1)} key={index} onClick={handleClick}>{choice}</button>
+          return <button aria-label={"Answer option: " + choice} className={'choice-btn-' + (index + 1)} key={index} onClick={handleClick}>{choice}</button>
         })
       }
     </div>
