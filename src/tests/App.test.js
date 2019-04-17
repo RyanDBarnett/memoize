@@ -36,7 +36,8 @@ describe('App', () => {
   describe('showNextQuestion', () => {
     it('should set the first question in currentQuestions to the currentQuestion', () => {
       wrapper.setState({
-        currentQuestions: [{question: 'Test Question 1'}]
+        currentQuestions: [{question: 'Test Question 1'}],
+        currentQuestion: {}
       });
       expect(wrapper.state().currentQuestions.length).toEqual(1);
       expect(wrapper.state().currentQuestion).toEqual({})
