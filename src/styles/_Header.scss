@@ -2,7 +2,7 @@
 
 .App-header {
   background: $container-color;
-  border-radius: 5%;
+  border-radius: $border-radius;
   border: $border;
   box-shadow: $box-shadow;
   margin: 2% 0 1% 0;
