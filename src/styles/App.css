@@ -12,14 +12,6 @@
   background-position: center;
 }
 
-.App-header {
-  background: #e3f0f6cc;
-  margin: 1%;
-  padding: 0 4%;
-  border-radius: 5%;
-  border: #211a90 2px solid;
-}
-
 .mandala {
   animation: mandala-spin infinite 120s linear;
   position: absolute;

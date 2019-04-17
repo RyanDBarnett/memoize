@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import '../styles/App.css';
+import Header from './Header';
 import Card from './Card';
 import mandala from '../media/blue-mandala.png';
 
@@ -80,12 +81,11 @@ class App extends Component {
         resetIncorrectQuestions={this.resetIncorrectQuestions}
         checkAnswer={this.checkAnswer}
       />;
+      
     return (
       <div className="App">
         <img className="mandala" src={mandala} />
-        <header className="App-header">
-          <h1>ARIA Flashcards</h1>
-        </header>
+        <Header />
         {card}
       </div>
     );
