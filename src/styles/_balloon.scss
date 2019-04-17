@@ -1,0 +1,15 @@
+.hot-air-balloon {
+  animation-direction: alternate;
+  animation: balloon-fly infinite 10s linear;
+  position: absolute;
+  width: 20px;
+}
+
+@keyframes balloon-fly {
+  from {
+    left: -200px;
+  }
+  to {
+    left: 100%;
+  }
+}

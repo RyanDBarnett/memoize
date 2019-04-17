@@ -1,29 +1,10 @@
-* {
-  font-family: 'OpenDyslexic';
-}
+@import 'balloon';
+@import 'fonts';
+@import 'layouts';
 
 .App {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
   background-image: url("../media/hot-air-ballons-sky.jpg");
-  background-size: cover;
   background-position: center;
-}
-
-.hot-air-balloon {
-  animation: balloon-fly infinite 10s linear;
-  animation-direction: alternate;
-  position: absolute;
-  width: 20px;
-}
-
-@keyframes balloon-fly {
-  from {
-    left: -200px;
-  }
-  to {
-    left: 100%;
-  }
+  background-size: cover;
+  @extend %app-layout;
 }

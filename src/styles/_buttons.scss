@@ -1,0 +1,14 @@
+@import 'variables';
+
+button {
+  border-radius: $border-radius;
+  border: $border;
+  cursor: pointer;
+  font-size: $font-size;
+  margin: 2% 2%;
+  text-transform: uppercase;
+}
+
+button:hover {
+  background: $hover-color;
+}
