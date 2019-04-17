@@ -5,10 +5,15 @@ button {
   border: $border;
   cursor: pointer;
   font-size: $font-size;
+  line-height: 1.5em;
   margin: 2% 2%;
   text-transform: uppercase;
-}
 
-button:hover {
-  background: $hover-color;
+  &:focus {
+    outline: #8d8dbe8a auto 10px;
+  }
+
+  &:hover {
+    background: $hover-color;
+  }
 }
