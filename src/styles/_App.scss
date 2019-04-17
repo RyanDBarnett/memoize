@@ -2,6 +2,10 @@
 @import 'fonts';
 @import 'layouts';
 
+* {
+  box-sizing: border-box;
+}
+
 .App {
   background-image: url("../media/hot-air-ballons-sky.jpg");
   background-position: center;

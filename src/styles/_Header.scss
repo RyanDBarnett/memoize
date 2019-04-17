@@ -4,6 +4,26 @@
   border: #211a90 2px solid;
   margin: 1%;
   text-align: center;
-  width: 30%;
+  width: 40%;
   z-index: 0;
+}
+
+@media screen and (max-width: 600px) {
+  .App-header {
+    width: 60%;
+
+    h1 {
+      font-size: 1.3em;
+    }
+  }
+}
+
+@media screen and (min-width: 600px) and (max-width: 1000px) {
+  .App-header {
+    width: 40%;
+
+    h1 {
+      font-size: 1.5em;
+    }
+  }
 }

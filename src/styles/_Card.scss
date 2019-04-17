@@ -8,11 +8,31 @@
   margin: 2% 0 20% 0;
   padding: 2%;
   text-align: center;
-  width: 40%;
+  width: 50%;
   z-index: 0;
 
   h4 {
     font-size: $font-size;
     min-height: 75px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .Card {
+    width: 80%;
+
+    h4 {
+      font-size: 1em;
+    }
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .Card {
+    width: 70%;
+
+    h4 {
+      font-size: 1em;
+    }
   }
 }
