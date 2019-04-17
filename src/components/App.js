@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import '../styles/App.css';
 import Header from './Header';
 import Card from './Card';
-import mandala from '../media/blue-mandala.png';
+import balloon from '../media/hot-air-balloon.png';
 
 class App extends Component {
   constructor() {
@@ -72,7 +72,21 @@ class App extends Component {
     return JSON.parse(localStorage.getItem('appState'));
   }
 
+  addBalloons = () => {
+    return (
+      this.state.correctQuestions.map((correctQues, index) => {
+        return <img className="hot-air-balloon" key={index} src={balloon} style={{top: this.getRandomWindowHeight()}} alt="Orange and red striped hot air balloon"/>
+      })
+    )
+  }
+
+  getRandomWindowHeight = () => {
+    let height = window.innerHeight;
+    return Math.floor(Math.random() * height) + 1;
+  }
+
   render() {
+    let balloons = this.state.correctQuestions && this.addBalloons();
     let card = this.state.currentQuestions !== null &&
       <Card
         currentQuestion={this.state.currentQuestion}
@@ -81,10 +95,10 @@ class App extends Component {
         resetIncorrectQuestions={this.resetIncorrectQuestions}
         checkAnswer={this.checkAnswer}
       />;
-      
+
     return (
       <div className="App">
-        <img className="mandala" src={mandala} />
+        {balloons}
         <Header />
         {card}
       </div>

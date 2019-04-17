@@ -7,22 +7,23 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-image: url("../media/chuttersnap-541390-unsplash.jpg");
+  background-image: url("../media/hot-air-ballons-sky.jpg");
   background-size: cover;
   background-position: center;
 }
 
-.mandala {
-  animation: mandala-spin infinite 120s linear;
+.hot-air-balloon {
+  animation: balloon-fly infinite 10s linear;
+  animation-direction: alternate;
   position: absolute;
-  width: 40%; 
+  width: 20px;
 }
 
-@keyframes mandala-spin {
+@keyframes balloon-fly {
   from {
-    transform: rotate(0deg);
+    left: -200px;
   }
   to {
-    transform: rotate(360deg);
+    left: 100%;
   }
 }
