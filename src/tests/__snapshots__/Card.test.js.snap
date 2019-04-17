@@ -35,18 +35,21 @@ exports[`Card should match the snapshot with all data passed in 1`] = `
     className="btnContainer"
   >
     <button
+      className="choice-btn-1"
       key="0"
       onClick={[Function]}
     >
       Properties
     </button>
     <button
+      className="choice-btn-2"
       key="1"
       onClick={[Function]}
     >
       States
     </button>
     <button
+      className="choice-btn-3"
       key="2"
       onClick={[Function]}
     >

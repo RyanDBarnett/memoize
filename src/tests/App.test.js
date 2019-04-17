@@ -2,6 +2,30 @@ import React from 'react';
 import App from '../components/App';
 import { shallow } from "enzyme";
 
+// class LocalStorageMock {
+//   constructor() {
+//     this.store = {};
+//   }
+
+//   clear() {
+//     this.store = {};
+//   }
+
+//   getItem(key) {
+//     return this.store[key] || null;
+//   }
+
+//   setItem(key, value) {
+//     this.store[key] = value.toString();
+//   }
+
+//   removeItem(key) {
+//     delete this.store[key];
+//   }
+// };
+
+// global.localStorage = new LocalStorageMock;
+
 describe('App', () => {
   let wrapper;
 
@@ -77,6 +101,20 @@ describe('App', () => {
       wrapper.instance().resetAllQuestions();
       expect(wrapper.state().correctQuestions).toEqual([]);
       expect(wrapper.state().incorrectQuestions).toEqual([]);
+    });
+  });
+
+  describe('getStateLocalStorage', () => {
+    it('should return a previously set app state from localStorage', () => {
+      let mockState = {
+        currentQuestions: [{question: 3}, {question: 4}],
+        currentQuestion: {question: 2},
+        correctQuestions: [{question: 4}],
+        incorrectQuestions: []
+      }
+      localStorage.setItem('appState', JSON.stringify(mockState));
+      let returnedAppState = wrapper.instance().getStateLocalStorage('appState');
+      expect(returnedAppState).toEqual(mockState);
     });
   });
 
