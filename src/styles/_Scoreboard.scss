@@ -1,28 +1,29 @@
 @import 'variables';
 
 .Scoreboard {
-  z-index: 0;
-  display: flex;
-  justify-content: space-between;
   background-color: $container-color;
   border-radius: $border-radius;
   border: $border;
+  box-shadow: $box-shadow;
+  display: flex;
+  justify-content: space-between;
   padding: 2%;
   width: 50%;
+  z-index: 0;
 }
 
 @media screen and (max-width: 600px) {
   .Scoreboard {
-    width: 80%;
-    font-size: .8em;
-    flex-direction: column;
     align-items: center;
+    flex-direction: column;
+    font-size: .8em;
+    width: 80%;
   }
 }
 
 @media screen and (max-width: 1000px) {
   .Scoreboard {
-    width: 70%;
     font-size: .8em;
+    width: 70%;
   }
 }

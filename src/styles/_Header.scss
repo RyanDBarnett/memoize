@@ -1,8 +1,11 @@
+@import 'variables';
+
 .App-header {
-  background: #e3f0f6f7;
+  background: $container-color;
   border-radius: 5%;
-  border: #211a90 2px solid;
-  margin: 1%;
+  border: $border;
+  box-shadow: $box-shadow;
+  margin: 2% 0 1% 0;
   text-align: center;
   width: 40%;
   z-index: 0;
