@@ -9,10 +9,6 @@
 }
 
 @keyframes balloon-fly {
-  from {
-    left: -200px;
-  }
-  to {
-    left: 100%;
-  }
+  0% {left: -200px;}
+  100% {left: 100%;}
 }

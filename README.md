@@ -13,9 +13,9 @@ In order to install and run this app on your local machine type the following in
 
 ### Screenshots
 
-<!-- ![image of project's starting screen](./src/images/screenshot1.png)
+![image of normal card screen](./src/media/aria-app-screenshot.png)
 
-![image of project's flashcard screen](./src/images/screenshot2.png) -->
+![image of end screen](./src/media/aria-app-end-screenshot.png)
 
 ### Learning Goals
 
