@@ -15,6 +15,10 @@ class App extends Component {
     }
   }
 
+  componentDidUpdate = () => {
+    this.setStateLocalStorage();
+  }
+
   componentDidMount = () => {
     if(localStorage.length) {
       this.setState(this.getStateLocalStorage());
@@ -47,7 +51,6 @@ class App extends Component {
     this.setState({
       currentQuestion: this.state.currentQuestions.shift()
     });
-    this.setStateLocalStorage();
   }
 
   resetAllQuestions = () => {
