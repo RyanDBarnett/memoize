@@ -1,6 +1,9 @@
 .hot-air-balloon {
   animation-direction: alternate;
-  animation: balloon-fly infinite 10s linear;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+  animation-name: balloon-fly;
+  animation-timing-function: linear;
   position: absolute;
   width: 20px;
 }
