@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import '../styles/App.css';
+import '../styles/_App.scss';
 import Header from './Header';
 import Card from './Card';
 import balloon from '../media/hot-air-balloon.png';
